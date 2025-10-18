@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlb_project>
+<db path="product_master.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="921"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="product_master" custom_title="0" dock_id="2" table="4,14:mainproduct_master"/><dock_state state="000000ff00000000fd00000001000000020000033c0000027bfc0100000002fb000000160064006f0063006b00420072006f007700730065003101000000000000033c0000000000000000fb000000160064006f0063006b00420072006f007700730065003201000000000000033c0000012600ffffff000002800000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="product_master" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="20"/><column index="2" value="54"/><column index="3" value="287"/><column index="4" value="39"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">CREATE TABLE product_master (
+
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+  code TEXT NOT NULL UNIQUE,
+
+  name TEXT NOT NULL,
+
+  price INTEGER NOT NULL
+
+);
+
+
+
+INSERT INTO product_master (code, name, price) VALUES
+
+('328401', 'フィラーレ　３Ｃ　０．７　P-B3A12-BK/軸色・ブラック', 2000),
+
+('328402', 'フィラーレ　３Ｃ　０．７　P-B3A12-BL/軸色・ブルー', 2000),
+
+('328403', 'フィラーレ　３Ｃ　０．７　P-B3A12-R/軸色・レッド', 2000),
+
+('328416', 'フィラーレ　３Ｃ　０．７　P-B3A12-S/軸色・シルバー', 2000),
+
+('531201', 'ブレン　３Ｃ　０．５　B3AS88-BK/軸色・黒', 400),
+
+('531210', 'ブレン　３Ｃ　０．５　B3AS88-GR/軸色・グレー', 400),
+
+('531215', 'ブレン　３Ｃ　０．５　B3AS88-W/軸色・白', 400),
+
+('531220', 'ブレン　３Ｃ　０．５　B3AS88-BG/軸色・ブルーグリーン', 400),
+
+('531207', 'ブレン　３Ｃ　０．５　B3AS88-P/軸色・ピンク', 400);
+</sql>
+<current_tab id="0"/>
+</tab_sql>
+</sqlb_project>
