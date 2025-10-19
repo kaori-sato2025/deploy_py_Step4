@@ -47,9 +47,7 @@ DB_NAME= os.getenv("DB_NAME")
 
 @app.get("/api/product")
 def read_product(code: str, db: Session = Depends(get_db)):
-
     try:
-        # print(f"受け取ったコード: {code}")
         product = db.query(Product).filter(Product.code == code.strip()).first()
         if product:
             return {
@@ -68,6 +66,24 @@ def read_product(code: str, db: Session = Depends(get_db)):
         return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             content={"message": "サーバーエラー", "detail": str(e)}
+        )
+
+@app.get("/api/products")
+def get_products(db: Session = Depends(get_db)):
+    try:
+        products = db.query(Product).all()
+        return [
+            {
+                "code": p.code,
+                "name": p.name,
+                "price": p.price
+            }
+            for p in products
+        ]
+    except Exception as e:
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={"message": "商品一覧取得エラー", "detail": str(e)}
         )
 
 @app.post("/api/purchase")
