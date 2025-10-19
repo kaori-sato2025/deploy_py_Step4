@@ -20,7 +20,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Next.jsのURL http://localhost:3002
+    allow_origins=["https://app-002-gen10-step3-1-node-oshima22.azurewebsites.net/"],  # Next.jsのURL http://localhost:3002
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
