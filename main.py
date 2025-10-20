@@ -68,24 +68,6 @@ def read_product(code: str, db: Session = Depends(get_db)):
             content={"message": "サーバーエラー", "detail": str(e)}
         )
 
-@app.get("/api/products")
-def get_products(db: Session = Depends(get_db)):
-    try:
-        products = db.query(Product).all()
-        return [
-            {
-                "code": p.code,
-                "name": p.name,
-                "price": p.price
-            }
-            for p in products
-        ]
-    except Exception as e:
-        return JSONResponse(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            content={"message": "商品一覧取得エラー", "detail": str(e)}
-        )
-
 @app.post("/api/purchase")
 async def register_purchase(request: Request, db: Session = Depends(get_db)):
     data = await request.json()
