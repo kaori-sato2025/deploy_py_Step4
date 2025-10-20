@@ -15,7 +15,6 @@ from database import engine
 from dotenv import load_dotenv
 load_dotenv()
 
-
 app = FastAPI()
 
 app.add_middleware(
